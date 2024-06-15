@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicios Bootstrap</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Content menu -->
+
+        <!-- Wrapper -->
+        <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="bg-dark">
+                <div class="sidebar-header">
+                    <a class="nav-link" href="modulo_principal.html"><h3>Panel Admin</h3></a>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item py-2">
+                        <a class="nav-link active" href="modulo_usuarios.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="modulo_clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="modulo_categorias.html">Categorías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="modulo_productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="modulo_pedido.html">Pedido</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Content -->
+            <div id="content" class="p-4 p-md-5 pt-5">
+                <h2 class="mb-4">Módulo de Clientes</h2>
+
+                <!-- Content here -->
+
+        <!-- Content fin menu -->
+        <div class="container">
+            <h1>Módulo de Clientes</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="clientes">
+                    <!-- Aquí se renderizarán los clientes -->
+                </tbody>
+            </table>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-create-cliente">Crear Cliente</button>
+        </div>
+    
+        <!-- Modal para crear cliente -->
+        <div class="modal" id="modal-create-cliente">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Crear Cliente</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-create-cliente">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido">Apellido</label>
+                                <input type="text" class="form-control" id="apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Crear Cliente</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal para editar cliente -->
+        <div class="modal" id="modal-edit-cliente">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar Cliente</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form-edit-cliente">
+                            <div class="form-group">
+                                <label for="nombre-edit">Nombre</label>
+                                <input type="text" class="form-control" id="nombre-edit" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido-edit">Apellido</label>
+                                <input type="text" class="form-control" id="apellido-edit" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email-edit">Email</label>
+                                <input type="email" class="form-control" id="email-edit" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono-edit">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono-edit" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Módulo Principal -->
+        
+<!-- fin -->
+    </div>
+</div>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+            <script>
+                // Array de clientes
+                let clientes = [
+                    { id: 1, nombre: "Juan", apellido: "Pérez", email: "juan.perez@example.com", telefono: "1234567890" },
+                    { id: 2, nombre: "María", apellido: "González", email: "maria.gonzalez@example.com", telefono: "9876543210" },
+                    { id: 3, nombre: "Pedro", apellido: "Rodríguez", email: "pedro.rodriguez@example.com", telefono: "5551234567" }
+                ];
+        
+                // Renderizar clientes
+                function renderClientes() {
+                    let html = "";
+                    clientes.forEach(cliente => {
+                        html += `
+                            <tr>
+                                <td>${cliente.nombre}</td>
+                                <td>${cliente.apellido}</td>
+                                <td>${cliente.email}</td>
+                                <td>${cliente.telefono}</td>
+                                <td>
+                                    <button class="btn-edit" data-id="${cliente.id}">Editar</button>
+                                    <button class="btn-delete" data-id="${cliente.id}">Eliminar</button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+                    document.getElementById("clientes").innerHTML = html;
+                }
+                renderClientes();
+        
+                // Crear cliente
+                document.getElementById("form-create-cliente").addEventListener("submit", e => {
+                    e.preventDefault();
+                    let nombre = document.getElementById("nombre").value;
+                    let apellido = document.getElementById("apellido").value;
+                    let email = document.getElementById("email").value;
+                    let telefono = document.getElementById("telefono").value;
+                    let nuevoCliente = { id: clientes.length + 1, nombre, apellido, email, telefono };
+                    clientes.push(nuevoCliente);
+                    renderClientes();
+                    document.getElementById("modal-create-cliente").classList.remove("show");
+                });
+        
+                // Editar cliente
+                document.addEventListener("click", e => {
+                    if (e.target.classList.contains("btn-edit")) {
+                        let id = e.target.dataset.id;
+                        let cliente = clientes.find(c => c.id == id);
+                        document.getElementById("nombre-edit").value = cliente.nombre;
+                        document.getElementById("apellido-edit").value = cliente.apellido;
+                        document.getElementById("email-edit").value = cliente.email;
+                        document.getElementById("telefono-edit").value = cliente.telefono;
+                        document.getElementById("modal-edit-cliente").classList.add("show");
+                    }
+                });
+        
+                document.getElementById("form-edit-cliente").addEventListener("submit", e => {
+                    e.preventDefault();
+                    let id = document.getElementById("modal-edit-cliente").dataset.id;
+                    let cliente = clientes.find(c => c.id == id);
+                    cliente.nombre = document.getElementById("nombre-edit").value;
+                    cliente.apellido = document.getElementById("apellido-edit").value;
+                    cliente.email = document.getElementById("email-edit").value;
+                    cliente.telefono = document.getElementById("telefono-edit").value;
+                    renderClientes();
+                    document.getElementById("modal-edit-cliente").classList.remove("show");
+                });
+        
+                // Eliminar cliente
+                document.addEventListener("click", e => {
+                    if (e.target.classList.contains("btn-delete")) {
+                        let id = e.target.dataset.id;
+                        clientes = clientes.filter(c => c.id != id);
+                        renderClientes();
+                    }
+                });
+            </script>
+</body>
+
+</html>
